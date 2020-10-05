@@ -1,7 +1,7 @@
 import faker from "faker";
 
 export class Company {
-  companyName: string;
+  name: string;
   catchPhrase: string;
   location: {
     lat: number;
@@ -9,11 +9,19 @@ export class Company {
   };
 
   constructor() {
-    this.companyName = faker.company.companyName();
+    this.name = faker.company.companyName();
     this.catchPhrase = faker.company.catchPhrase();
     this.location = {
       lat: parseInt(faker.address.latitude()),
       lng: parseInt(faker.address.longitude()),
     };
+  }
+  markerContent(): string {
+    return `
+    <div>
+        <h1> Company Name : ${this.name}</h1>
+        <h3>Catchphrase : ${this.catchPhrase}</h3>
+    </div>
+   `;
   }
 }

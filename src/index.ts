@@ -1,14 +1,12 @@
 import { User } from "./User";
 import { Company } from "./Company";
-import { CustomMap } from "./map";
+import { CustomMap } from "./CustomMap";
 
 const user = new User();
 
 const company = new Company();
 
-console.log(document.getElementById("map"));
-
 const customMap = new CustomMap("map");
 
 customMap.addMarker(user);
-custo
+customMap.addMarker(company);
